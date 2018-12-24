@@ -1,0 +1,20 @@
+opam-version: "1.2"
+name: "gstreamer"
+version: "~unknown"
+maintainer: "Manas Jayanth<prometheansacrifice@gmail.com>"
+authors: "Manas Jayanth <prometheansacrifice@gmail.com>"
+homepage: "https://github.com/prometheansacrifice/ocaml-gstreamer"
+bug-reports: "https://github.com/prometheansacrifice/ocaml-gstreamer/issues"
+license: "GPL3"
+dev-repo: "https://github.com/prometheansacrifice/ocaml-gstreamer.git"
+build: [["dune" "build" "-p" name "-j" jobs]]
+build-test: [["dune" "runtest" "-p" name "-j" jobs]]
+depends: [
+  "dune" {build}
+  "ctypes"
+  "ctypes-foreign"
+  "ounit"
+  "base"
+  "stdio"
+  "configurator"
+]
