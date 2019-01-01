@@ -9,6 +9,9 @@ fi
 echo "Initialising opam"
 opam init -y  --comp 4.06.1
 
+echo "Installing deps"
+opam install ocamlfind -y
+
 echo "Pinning gobject-introspection"
 opam pin add -y gobject-introspection https://github.com/cedlemo/OCaml-GObject-Introspection.git
 
