@@ -19,8 +19,8 @@ let files_suffix = "Raw"
 (** Instead of generate all the data structures (and theirs related methods or
  *  constants), the idea is to choose what is needed. *)
 let data_structures =
-  ["Bus"; "Message"]
-(* "MiniObject"; "Caps";  *)
+  [ "Allocator"; "AllocationParams"; "BufferList"; "BufferingMode"; "URIType"; "PadTemplate"; "State"; "StateChangeReturn"; "Clock"; "Context"; "Sample"; "Segment"; "SegmentFlags"; "Stream"; "StreamFlags"; "StreamType"; "StreamCollection";  "TagMergeMode"; "TagScope"; "TocEntryType"; "Format"; "MetaInfo"; "Meta"; "Rank"; "ProtectionMeta" ]
+(*  "Toc"; "Device"; "Buffer"; "Element"; "Structure"; "MiniObject"; "Caps"; "TagList";"Message"; "BufferPool"; "TocEntry"; "Memory"; "MapInfo"; "ElementFactory"; "ParentBufferMeta"; "Bus";  *)
   
 (** One can choose to skip the bindings of some constants because they are not
  *  needed or because you want to create manually the bindings in the "Core.ml"
