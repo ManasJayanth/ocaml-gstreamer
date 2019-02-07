@@ -6,7 +6,7 @@ then
     exit -1
 fi
 
-LIB=gstreamer
+LIB=gi-gstreamer
 opam remove $LIB -y
 opam pin remove $LIB -y
 opam pin add . -y                                                                                                                                                                                                                                                               
