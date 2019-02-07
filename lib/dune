@@ -2,6 +2,7 @@
  (targets State.mli State.ml
           ;; Allocator.mli Allocator.ml
           Allocation_params.mli Allocation_params.ml
+          Bin.mli Bin.ml
           ;; Element.mli Element.ml
           URIType.mli URIType.ml
           ;; Buffer.mli Buffer.ml
@@ -13,6 +14,9 @@
           Clock.mli Clock.ml
           Clock_return.mli Clock_return.ml
           Context.mli Context.ml
+          Element_flags.mli Element_flags.ml
+          Iterator.mli Iterator.ml
+          Iterator_result.mli Iterator_result.ml
           ;; Element_factory.mli Element_factory.ml
           Format.mli Format.ml
           

@@ -19,7 +19,7 @@ let files_suffix = "Raw"
 (** Instead of generate all the data structures (and theirs related methods or
  *  constants), the idea is to choose what is needed. *)
 let data_structures =
-  [ "Allocator"; "AllocationParams"; "BufferList"; "BufferingMode"; "URIType"; "PadTemplate"; "State"; "StateChangeReturn"; "Clock"; "Context"; "Sample"; "Segment"; "SegmentFlags"; "Stream"; "StreamFlags"; "StreamType"; "StreamCollection";  "TagMergeMode"; "TagScope"; "TocEntryType"; "Format"; "MetaInfo"; "Meta"; "Rank"; "ProtectionMeta" ]
+  [ "Allocator"; "AllocationParams"; "BufferList"; "BufferingMode"; "URIType"; "PadTemplate"; "State"; "StateChangeReturn"; "Clock"; "Context"; "Sample"; "Segment"; "SegmentFlags"; "Stream"; "StreamFlags"; "StreamType"; "StreamCollection";  "TagMergeMode"; "TagScope"; "TocEntryType"; "Format"; "MetaInfo"; "Meta"; "Rank"; "Bin"; "ElementFlags"; "Iterator"; "IteratorResult"; "ProtectionMeta" ]
 (*  "Toc"; "Device"; "Buffer"; "Element"; "Structure"; "MiniObject"; "Caps"; "TagList";"Message"; "BufferPool"; "TocEntry"; "Memory"; "MapInfo"; "ElementFactory"; "ParentBufferMeta"; "Bus";  *)
   
 (** One can choose to skip the bindings of some constants because they are not
