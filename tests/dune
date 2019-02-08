@@ -1,0 +1,9 @@
+(executables
+  (names tests)
+  (libraries   gi-glib2 gi-gstreamer oUnit)
+)
+
+(alias
+  (name    runtest)
+  (deps    (:x tests.exe))
+  (action  (run %{x})))
