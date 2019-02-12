@@ -53,7 +53,8 @@
           Stream_type.mli Stream_type.ml
           Stream_flags.mli Stream_flags.ml
           ;; Structure.mli Structure.ml
-          Lock_flags.mli Lock_flags.ml)
+          Lock_flags.mli Lock_flags.ml
+	  Core_raw.ml Core_raw.mli)
  (deps    ../gen/gen.exe)
  (action  (run %{deps} -o %{targets})))
 
