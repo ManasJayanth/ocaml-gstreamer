@@ -17,3 +17,9 @@ opam pin add -y gobject-introspection https://github.com/cedlemo/OCaml-GObject-I
 
 echo "Pinning gi-bindings-generator"
 opam pin add -y gi-bindings-generator https://github.com/cedlemo/OCaml-GI-ctypes-bindings-generator.git
+
+echo "Pinning gi-glib2"
+opam pin add -y gi-glib2 https://github.com/cedlemo/OCaml-GLib2.git
+
+echo "Pinning gi-gobject"
+opam pin add -y gi-gobject https://github.com/prometheansacrifice/ocaml-gobject.git
