@@ -1,10 +1,7 @@
 #! /bin/bash
 
-eval $(opam env || opam config env)
-opam pin add . -y
-
-dune runtest
-
-cd e2e
-ocamlfind ocamlopt -package gi-gstreamer -linkpkg init.ml
-./a.out
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    docker exec -w /ocaml-gstreamer ocaml-gi-${TYPE} bash /ocaml-gstreamer/.ci/run-tests.opam.sh
+elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    bash ./.ci/run-tests.opam.sh
+fi
