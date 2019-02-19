@@ -14,6 +14,7 @@
           Clock.mli Clock.ml
           Clock_return.mli Clock_return.ml
           Context.mli Context.ml
+          Control_source.mli Control_source.ml
           Element_flags.mli Element_flags.ml
           Iterator.mli Iterator.ml
           Iterator_result.mli Iterator_result.ml
