@@ -19,12 +19,37 @@ let files_suffix = "Raw"
 (** Instead of generate all the data structures (and theirs related methods or
  *  constants), the idea is to choose what is needed. *)
 let data_structures =
-  [ "Allocator"; "AllocationParams"; "BufferList"; "BufferingMode"; "URIType";
-    "PadTemplate"; "State"; "StateChangeReturn"; "Clock"; "Context"; "Sample";
-    "Segment"; "SegmentFlags"; "Stream"; "StreamFlags"; "StreamType";
-    "StreamCollection"; "TagMergeMode"; "TagScope"; "TocEntryType"; "Format";
-    "MetaInfo"; "Meta"; "Rank"; "Bin"; "ElementFlags"; "Iterator";
-    "IteratorResult"; "ProtectionMeta" ]
+  [ "Allocator"
+  ; "AllocationParams"
+  ; "BufferList"
+  ; "BufferingMode"
+  ; "URIType"
+  ; "PadTemplate"
+  ; "State"
+  ; "StateChangeReturn"
+  ; "Clock"
+  ; "Context"
+  ; "Sample"
+  ; "Segment"
+  ; "SegmentFlags"
+  ; "Stream"
+  ; "StreamFlags"
+  ; "StreamType"
+  ; "StreamCollection"
+  ; "TagMergeMode"
+  ; "TagScope"
+  ; "TocEntryType"
+  ; "Format"
+  ; "MetaInfo"
+  ; "Meta"
+  ; "Rank"
+  ; "Bin"
+  ; "ElementFlags"
+  ; "Iterator"
+  ; "IteratorResult"
+  ; "ProtectionMeta"
+  ; "ControlSource" ]
+
 (*  "Toc"; "Device"; "Buffer"; "Element"; "Structure"; "MiniObject"; "Caps"; "TagList";"Message"; "BufferPool"; "TocEntry"; "Memory"; "MapInfo"; "ElementFactory"; "ParentBufferMeta"; "Bus";  *)
 
 (** One can choose to skip the bindings of some constants because they are not
@@ -39,8 +64,12 @@ let functions = ["is_initialized"]
 let sources = Loader.generate_files ("Core" ^ files_suffix)
 
 let () =
-  let () = Loader.write_constant_bindings_for namespace ~version sources const_to_skip in
-  let () = Loader.write_function_bindings_for namespace ~version sources functions in
+  let () =
+    Loader.write_constant_bindings_for namespace ~version sources const_to_skip
+  in
+  let () =
+    Loader.write_function_bindings_for namespace ~version sources functions
+  in
   let () = Loader.write_enum_and_flag_bindings_for namespace ~version () in
   let () = Loader.write_bindings_for namespace ~version data_structures in
   BG.Binding_utils.Sources.close sources
