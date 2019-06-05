@@ -1,72 +1,8 @@
 (rule
- (targets State.mli State.ml
-          ;; Allocator.mli Allocator.ml
-          Allocation_params.mli Allocation_params.ml
-          Bin.mli Bin.ml
-          ;; Element.mli Element.ml
-          URIType.mli URIType.ml
-          ;; Buffer.mli Buffer.ml
-          Stream_collection.mli Stream_collection.ml
-          Buffer_list.mli Buffer_list.ml
-          Buffering_mode.mli Buffering_mode.ml
-          ;; Buffer_pool.mli Buffer_pool.ml
-          ;; Bus.mli Bus.ml
-          Clock.mli Clock.ml
-          Clock_return.mli Clock_return.ml
-          Context.mli Context.ml
-          Control_source.mli Control_source.ml
-          Element_flags.mli Element_flags.ml
-          Iterator.mli Iterator.ml
-          Iterator_result.mli Iterator_result.ml
-          ;; Element_factory.mli Element_factory.ml
-          Format.mli Format.ml
-
-          ;; Memory.mli Memory.ml
-          Map_flags.mli Map_flags.ml
-          Meta_info.mli Meta_info.ml
-          Meta_flags.mli Meta_flags.ml
-          Meta.mli Meta.ml
-          ;; Map_info.mli Map_info.ml
-          Memory_flags.mli Memory_flags.ml
-          ;; Parent_buffer_meta.mli Parent_buffer_meta.ml
-          Pad_template.mli Pad_template.ml
-          Pad_direction.mli Pad_direction.ml
-          Pad_presence.mli Pad_presence.ml
-          Progress_type.mli Progress_type.ml
-          Protection_meta.mli Protection_meta.ml
-          Rank.mli Rank.ml
-          ;; Tag_list.mli Tag_list.ml
-          Tag_merge_mode.mli Tag_merge_mode.ml
-          Tag_scope.mli Tag_scope.ml
-          ;; Toc.mli Toc.ml
-          Toc_scope.mli Toc_scope.ml
-          ;; Toc_entry.mli Toc_entry.ml
-          Toc_entry_type.mli Toc_entry_type.ml
-          Toc_loop_type.mli Toc_loop_type.ml
-          Message_type.mli Message_type.ml
-          Sample.mli Sample.ml
-          Segment.mli Segment.ml
-          Segment_flags.mli Segment_flags.ml
-          Seek_flags.mli Seek_flags.ml
-          State_change.mli State_change.ml
-          State_change_return.mli State_change_return.ml
-          Stream.mli Stream.ml
-          Stream_type.mli Stream_type.ml
-          Stream_flags.mli Stream_flags.ml
-          ;; Structure.mli Structure.ml
-          Lock_flags.mli Lock_flags.ml
-	  Core_raw.ml Core_raw.mli)
- (deps    ../gen/gen.exe)
- (action  (run %{deps} -o %{targets})))
-
-(rule
  (targets c_flags.sexp
             c_library_flags.sexp)
   (deps    ../configurator/discover.exe)
   (action  (run %{deps})))
-
-
-
 
 (library
  (name        Gstreamer)
@@ -77,14 +13,3 @@
   (c_library_flags (:include c_library_flags.sexp))
   (flags -open GLib -open GObject)
   )
-
-
-;; (library
-;;  (name        GES)
-;;   (public_name ges)
-;;   (libraries ctypes ctypes.foreign)
-;;   (c_names         dyn_load_constants_stubs)
-;;   (c_flags         (:include c_flags.sexp))
-;;   (c_library_flags (:include c_library_flags.sexp))
-;;   (ocamlopt_flags (-ccopt ("-Wl,-no-as-needed")))
-;;  )
